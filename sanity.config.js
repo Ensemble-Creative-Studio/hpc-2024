@@ -1,25 +1,106 @@
-/**
- * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...index]]/page.jsx` route
- */
 
-import {visionTool} from '@sanity/vision'
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import { defineConfig } from "sanity"
+import { deskTool } from "sanity/desk"
+import { visionTool } from "@sanity/vision"
+import { dashboardTool } from "@sanity/dashboard";
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 
-// Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
+import { schemaTypes } from "./schemas"
 import {apiVersion, dataset, projectId} from './sanity/env'
-import {schema} from './sanity/schema'
+import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
+
+
+// Define the actions that should be available for singleton documents
+const singletonActions = new Set(["publish", "discardChanges", "restore"])
+
+// Define the singleton document types
+const singletonTypes = new Set(["header"])
 
 export default defineConfig({
   basePath: '/studio',
   projectId,
   dataset,
-  // Add and edit the content schema in the './sanity/schema' folder
-  schema,
+
   plugins: [
-    deskTool(),
-    // Vision is a tool that lets you query your content with GROQ in the studio
-    // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({defaultApiVersion: apiVersion}),
+    deskTool({
+      structure: (S, context) =>
+        S.list()
+          .title("Content")
+          .items([
+            S.documentTypeListItem("programme").title("Programme"),
+            S.documentTypeListItem("demolab").title("Demo LAB"),
+            // S.listItem()
+            // .title("Programme")
+            // .id("programme")
+            // .child(
+             
+            //   S.document()
+            //     .schemaType("programme")
+            //     .documentId("programme")
+                
+            // ),
+            // S.divider(),
+            //   orderableDocumentListDeskItem({type: 'produceProjects',  title: 'Produce', S, context}),
+            //   orderableDocumentListDeskItem({type: 'tagProduce',  title: 'Categories', S, context}),
+            //   S.divider(),
+            //   orderableDocumentListDeskItem({type: 'presentProjects',  title: 'Present', S, context}),
+            //   orderableDocumentListDeskItem({type: 'tagPresent',  title: 'Categories ', S, context}),
+            //   S.divider(),
+            S.divider(),
+            S.documentTypeListItem("speakers").title("Speakers"),
+
+              S.listItem()
+              .title("Settings")
+              .id("settings")
+              .child(
+                // Instead of rendering a list of documents, we render a single
+                // document, specifying the `documentId` manually to ensure
+                // that we're editing the single instance of the document
+                S.document()
+                  .schemaType("settings")
+                  .documentId("settings")
+              ),
+            // Regular document types
+            // S.listItem()
+            // .title("Footer")
+            // .id("footer")
+            // .child(
+            //   // Instead of rendering a list of documents, we render a single
+            //   // document, specifying the `documentId` manually to ensure
+            //   // that we're editing the single instance of the document
+            //   S.document()
+            //     .schemaType("footer")
+            //     .documentId("footer")
+            // ),
+            // S.documentTypeListItem("pageFooter").title("Page légales"),
+
+
+          ]),
+    }),
+visionTool(),
+    dashboardTool({
+      widgets: [
+ 
+      ]
+    }),
+    vercelDeployTool(),
+
   ],
+
+  schema: {
+    types: schemaTypes,
+
+    // Filter out singleton types from the global “New document” menu options
+    templates: (templates) =>
+      templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+  },
+
+  document: {
+    // For singleton types, filter out actions that are not explicitly included
+    // in the `singletonActions` list defined above
+    actions: (input, context) =>
+      singletonTypes.has(context.schemaType)
+        ? input.filter(({ action }) => action && singletonActions.has(action))
+        : input,
+  },
 })
