@@ -1,27 +1,267 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Roob";
+  src: url("/Roob.woff2") format("woff2"), url("/Roob.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@font-face {
+  font-family: "Roob";
+  src: url("/Roob-medium.woff2") format("woff2"),
+    url("/Roob-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@layer components {
+  .customGrid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+  .customGrid12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+ 
+  }
+  .customHeight{
+    height: calc(100vh - 6rem);
   }
 }
-
+*,
+html {
+  font-size: 62.5%;
+  --blue: #1b0996;
+  --yellow: #ffe00d;
+  --red: #ff3246;
+  --lightBlue: #0929d4;
+  --grey:#E7E7E7;
+}
+.blue {
+  color: var(--blue);
+}
+.yellow {
+  color: var(--yellow);
+}
+.red {
+  color: var(--red);
+}
+.lightBlue{
+  color: var(--lightBlue);
+}
+.back-blue {
+  background-color: var(--lightBlue);
+}
+.back-red {
+  background-color: var(--yellow);
+}
+.back-grey{
+  background-color: var(--grey);
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Roob";
+  font-weight: 500;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+header img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.border-bottom {
+  border-bottom: 2px solid black;
+}
+
+/* FONTSIZE */
+.hero-text {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 24px */
+  text-transform: uppercase;
+}
+.m-text-agenda {
+  font-family: Roob;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 20.4px */
+}
+.font-16px {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.menu-item {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 22px */
+  text-transform: uppercase;
+}
+.menu-item {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 22px */
+  text-transform: uppercase;
+}
+.sub-menu-item {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 22px */
+  text-transform: uppercase;
+}
+footer div, footer a {
+  font-size: 14px;
+font-style: normal;
+
+line-height: 120%; /* 16.8px */
+text-transform: uppercase;
+}
+ footer a {
+  font-weight: 300; 
+}
+.m-mini-time{
+font-size: 1.3rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: uppercase;
+}
+.m-date{
+line-height: 100%;
+font-size: 13px;
+font-style: normal;
+font-weight: 300;
+
+text-transform: uppercase;
+}
+.m-speakers{
+  font-size: 1.6rem;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 19.2px */
+text-transform: uppercase;
+}
+.m-job{
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 14.4px */
+text-transform: uppercase;
+}
+.m-company{
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 300;
+line-height: 120%; /* 14.4px */
+text-transform: uppercase;
+}
+
+
+/* CUSTOM IMAGE SIZE */
+.speakers-image{
+  height: 8.2rem;
+  width: 8.4rem;
+}
+.speakers-image img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+.informations{
+  font-size: 2.4rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: uppercase;
+}
+@media (min-width: 769px) {
+  .m-text-agenda {
+font-size: 2rem;
+  }
+  .informations{
+    font-size: 3.6rem;
+  }
+  .hero-text {
+    font-size: 4.2rem;
+
+  }
+  .font-16px {
+    font-size: 2rem;
+   
+  }
+  .max-width-630{
+    max-width: 630px;
+  }
+  .prog-u{
+
+font-size: 2rem;
+font-style: normal;
+font-weight: 300;
+line-height: 120%; /* 24px */
+text-decoration-line: underline;
+text-decoration-thickness: 1px;
+text-underline-offset: 3px;
+  }
+  .m-mini-time{
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    }
+    .m-date{
+      font-size: 1.6rem;
+    }
+    .m-speakers{
+      font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+    text-transform: uppercase;
+    }
+    .m-job{
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 14.4px */
+    text-transform: uppercase;
+    }
+    .m-company{
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%; /* 14.4px */
+    text-transform: uppercase;
+    }
+    .blockLine{
+      width: 14vw;
+      height: 100%;
+      right: -12vw;
+      bottom: 0px;
+      outline: 2px solid;
+      outline-color: black;
+    }
+    .blockLine.footerLine{
+      right: -3.65vw;
+    }
+    .customLine{
+      width: 97%;
+    border-right: 2px solid;
+    }
+    .speakers-image{
+      height: 11.8rem;
+      width: 11.3rem;
+    }
 }
