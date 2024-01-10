@@ -17,7 +17,7 @@ export default function Footer({ menuData }) {
               {item.icon && item.icon.asset && (
                 <Image
                 src={urlForImage(item.icon.asset)}
-
+priority
                   alt={item.name}
                   width={40}  // Set appropriate width
                   height={40} // Set appropriate height
