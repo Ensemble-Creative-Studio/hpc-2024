@@ -1,6 +1,6 @@
 import React from "react";
-
-function ProgrammeItem({ item, className }) {
+import Footer from "../home/Footer";
+function PageFooter({ item, className }) {
   return (
     <div className="sticky z-30 top-16 md:col-start-1 md:col-end-4 md:border-r-2 md:border-black">
       <div className={className}>

@@ -12,8 +12,8 @@ export default function Hero() {
       </div>
       <div>
         <div className="flex justify-center py-16">
-          <div className="w-3/5 md:w-1/2">
-            <Image priority className="max-width-630" src="/cube.svg" alt="me" height={1000} width={1000} />
+          <div className="w-3/5 md:w-full md:h-[63vh]">
+            <Image priority className="md:h-full md:w-full" src="/cube.svg" alt="me" height={1000} width={1000} />
           </div>
         </div>
       </div>

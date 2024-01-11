@@ -38,6 +38,8 @@ html {
   --red: #ff3246;
   --lightBlue: #0929d4;
   --grey:#E7E7E7;
+  scroll-behavior: smooth;
+  scroll-padding-top:4rem;
 }
 .blue {
   color: var(--blue);
@@ -264,4 +266,9 @@ text-underline-offset: 3px;
       height: 11.8rem;
       width: 11.3rem;
     }
+    *,
+html {
+
+  scroll-padding-top:6rem;
+}
 }

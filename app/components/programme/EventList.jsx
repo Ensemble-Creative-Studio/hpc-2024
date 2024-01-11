@@ -81,7 +81,7 @@ function EventList({ events }) {
 
           {event._type === "parallelEvent" && (
               <div className="relative">
-              <div className={`customGrid6 relative md:customGrid12 lightBlue px-4 md:px-0 bg-white border-b-2 border-black md:min-h-48 ${event.speakers && event.speakers.length > 0 ? 'sticky top-32 md:top-24 z-20' : ''}`}>
+              <div className={`customGrid6 relative md:customGrid12  px-4 md:px-0 bg-white border-b-2 border-black md:min-h-48 ${event.speakers && event.speakers.length > 0 ? 'sticky top-32 md:top-24 z-20' : ''}`}>
               <div className="pr-4 pt-8 pb-12 col-start-1 col-end-2 md:col-end-4 md:pl-8 md:pt-8 md:pr-4 md:pb-4 md:flex  ">
                           <div className="m-date break-all md:pr-1">{event.hourStart}</div>
                           {event.hourFinish && (
