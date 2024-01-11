@@ -71,7 +71,7 @@ export default function Header({page}) {
       </div>
          )}
             {!page && (
-         <div className="col-start-12 md:flex col-end-13 items-center justify-end pr-12 hidden" >
+         <div className="col-start-12 md:flex col-end-13 items-center justify-end relative md:right-12 hidden" >
          <a  href="mailto:contact@eurohpcsummit.eu" className="m-text-agenda ">
           Contact
         </a>

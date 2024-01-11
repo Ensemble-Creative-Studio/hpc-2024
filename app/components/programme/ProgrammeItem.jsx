@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 function ProgrammeItem({ item, className }) {
   return (
-    <div className="sticky z-30 top-16 md:col-start-1 md:col-end-4 md:border-r-2 md:border-black">
+    <div className="sticky z-30 top-16 md:col-start-1 md:col-end-4 md:border-b-2 md:border-r-2 md:border-black">
       <div className={className}>
         <div className="customGrid6 md:flex md:flex-col md:justify-between  h-16 md:h-full sticky top-0 border-b-2 border-black md:border-none text-white px-4 md:px-12 md:py-5">
           <div className="flex items-center md:items-baseline md:justify-between">
