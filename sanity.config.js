@@ -27,8 +27,19 @@ export default defineConfig({
         S.list()
           .title("Content")
           .items([
-            S.documentTypeListItem("programme").title("Programme"),
-            S.documentTypeListItem("demolab").title("Demo LAB"),
+            // documentList.defaultOrdering([{field: 'priority', direction: 'desc'}])
+
+
+            S.documentTypeListItem("programme")
+            .title("Programme")
+            .child(
+              S.documentList()
+                .id("programme")
+                .title("Programmes")
+                .defaultOrdering([{ field: 'date', direction: 'desc' }]) // Order by creation date in ascending order
+                .filter('_type == "programme"') // Replace "programme" with your actual schema type name
+            ),
+                      S.documentTypeListItem("demolab").title("Demo LAB"),
             // S.listItem()
             // .title("Programme")
             // .id("programme")

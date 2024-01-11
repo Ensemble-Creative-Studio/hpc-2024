@@ -9,6 +9,7 @@ export default {
   title: "programme",
   orderings: [orderRankOrdering],
   fields: [
+    
     {
       name: "title",
       type: "string",
