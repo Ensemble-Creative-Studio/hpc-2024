@@ -65,14 +65,14 @@ export default function Header({page}) {
         <div className="md:block hidden m-text-agenda">Thursday</div>
         </a>
         </div>
-        <a href="mailto:'contact@eurohpcsummit.eu'" className="m-text-agenda ">
+        <a href="mailto:contact@eurohpcsummit.eu" className="m-text-agenda ">
           Contact
         </a>
       </div>
          )}
             {!page && (
          <div className="col-start-12 md:flex col-end-13 items-center justify-end pr-12 hidden" >
-         <a  href="mailto:'contact@eurohpcsummit.eu'" className="m-text-agenda ">
+         <a  href="mailto:contact@eurohpcsummit.eu" className="m-text-agenda ">
           Contact
         </a>
          </div>

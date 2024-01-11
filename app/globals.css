@@ -57,7 +57,7 @@ html {
   background-color: var(--lightBlue);
 }
 .back-red {
-  background-color: var(--yellow);
+  background-color: var(--red);
 }
 .back-grey{
   background-color: var(--grey);
@@ -188,6 +188,12 @@ font-weight: 500;
 line-height: normal;
 text-transform: uppercase;
 }
+
+/* //custom */
+.demo-lab .block:nth-child(1) .prog-u {
+  display: block;
+  font-size: 1.3rem;
+}
 @media (min-width: 769px) {
   .m-text-agenda {
 font-size: 2rem;
@@ -270,5 +276,14 @@ text-underline-offset: 3px;
 html {
 
   scroll-padding-top:6rem;
+}
+.demo-lab .block:nth-child(1) .prog-u {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+.demo-lab .block:nth-child(1) .col-start-2 {
+grid-column-end: 11;
 }
 }

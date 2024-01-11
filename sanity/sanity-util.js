@@ -31,6 +31,18 @@ export async function getProgramme() {
 
   return programmeData;
 }
+export async function getDemoLab() {
+  const demoLabData = await client.fetch(groq`
+    *[_type == 'demolab']
+    | order(_createdAt asc)
+    {
+      ...,
+
+    }
+  `);
+
+  return demoLabData;
+}
 
 
 // export async function getTagProduce() {

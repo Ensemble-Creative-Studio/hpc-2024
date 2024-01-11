@@ -7,7 +7,13 @@ export default {
   type: "document",
   name: "programme",
   title: "programme",
-  orderings: [orderRankOrdering],
+  orderings: [
+    {
+      title: "Title",
+      name: "title",
+      by: [{ field: "date", direction: "desc" }],
+    },
+  ],
   fields: [
     
     {
