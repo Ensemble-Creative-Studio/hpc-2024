@@ -43,6 +43,18 @@ export async function getDemoLab() {
 
   return demoLabData;
 }
+export async function getInfos() {
+  const demoLabData = await client.fetch(groq`
+    *[_type == 'informations']
+    | order(_createdAt asc)
+    {
+      ...,
+
+    }
+  `);
+
+  return demoLabData;
+}
 
 
 // export async function getTagProduce() {

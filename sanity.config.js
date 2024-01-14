@@ -46,26 +46,21 @@ export default defineConfig({
                           .defaultOrdering([{ field: 'date', direction: 'desc' }]) // Order by creation date in ascending order
                           .filter('_type == "demolab"') // Replace "programme" with your actual schema type name
                       ),
-            // S.listItem()
-            // .title("Programme")
-            // .id("programme")
-            // .child(
-             
-            //   S.document()
-            //     .schemaType("programme")
-            //     .documentId("programme")
-                
-            // ),
-            // S.divider(),
-            //   orderableDocumentListDeskItem({type: 'produceProjects',  title: 'Produce', S, context}),
-            //   orderableDocumentListDeskItem({type: 'tagProduce',  title: 'Categories', S, context}),
-            //   S.divider(),
-            //   orderableDocumentListDeskItem({type: 'presentProjects',  title: 'Present', S, context}),
-            //   orderableDocumentListDeskItem({type: 'tagPresent',  title: 'Categories ', S, context}),
-            //   S.divider(),
+           
+                      S.listItem()
+                      .title("Practical Informations")
+                      .id("informations")
+                      .child(
+                        // Instead of rendering a list of documents, we render a single
+                        // document, specifying the `documentId` manually to ensure
+                        // that we're editing the single instance of the document
+                        S.document()
+                          .schemaType("informations")
+                          .documentId("informations")
+                      ),
             S.divider(),
             S.documentTypeListItem("speakers").title("Speakers"),
-
+            S.divider(),
               S.listItem()
               .title("Settings")
               .id("settings")

@@ -194,10 +194,18 @@ text-transform: uppercase;
   display: block;
   font-size: 1.3rem;
 }
+.linkedA a {
+  text-decoration: underline;
+  color: var(--lightBlue);
+}
+.pratical .infoTitle{
+  white-space: nowrap;
+}
 @media (min-width: 769px) {
   .m-text-agenda {
 font-size: 2rem;
   }
+
   .informations{
     font-size: 3.6rem;
   }
