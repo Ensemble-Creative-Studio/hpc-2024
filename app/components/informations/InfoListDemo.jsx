@@ -10,12 +10,43 @@ function InfoListDemo({ events }) {
   );
 
   // Custom component for rendering 'p' tags
-  const paragraphRenderer = ({ children }) => (
-    <p className="m-text-agenda">{children}</p>
-  );
+  const paragraphRenderer = ({ children }) => {
+    // Check if the block contains only an empty text span
+    if (children.length === 1 && children[0] === '') {
+      return <br />;
+    }
+    return <p className="m-text-agenda">{children}</p>;
+  };
+
+
+  const ImageComponent = ({ value }) => {
+    if (!value?.asset) {
+      return null;
+    }
+
+    // Extract the image ID from the asset reference
+    const imageId = value.asset._ref; // Adjust according to your asset reference format
+
+    return (
+      <div className="w-full pb-8">
+  <Image
+        priority
+        className="md:h-full md:w-full"
+        src={urlForImage({ _id: imageId })}
+        alt="Event Image"
+        height={1800}
+        width={1800}
+      />
+      </div>
+    
+    );
+  };
 
   // Define the components to override
   const components = {
+    types: {
+      image: ImageComponent, // Define the renderer for 'image' type
+    },
     marks: {
       link: linkRenderer,
     },

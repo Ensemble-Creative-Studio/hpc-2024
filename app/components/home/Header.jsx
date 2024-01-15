@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-export default function Header({page}) {
+export default function Header({page, demolab}) {
   return (
     <header className=" z-50 customGrid6 md:customGrid12 h-16 md:h-24 border-b-2 border-black sticky top-0 bg-white px-4 md:px-0">
       <div className="m-text-agenda flex items-center border-r-2  border-black md:col-start-1 md:col-end-4 md:px-12 md:justify-between">
@@ -31,10 +31,12 @@ export default function Header({page}) {
         <div className="block md:hidden m-text-agenda">Wed</div>
         <div className="md:block hidden m-text-agenda">Wednesday</div>
         </a>
+        {!demolab && (
         <a href="#thursday">
         <div className="block md:hidden m-text-agenda">Thu</div>
         <div className="md:block hidden m-text-agenda">Thursday</div>
         </a>
+         )}
       </div>
          )}
       <div className="flex md:hidden items-center col-end-7 justify-end gap-x-5">
@@ -60,10 +62,12 @@ export default function Header({page}) {
         <div className="block md:hidden m-text-agenda">Wed</div>
         <div className="md:block hidden m-text-agenda">Wednesday</div>
         </a>
+        {!demolab && (
         <a href="#thursday">
         <div className="block md:hidden m-text-agenda">Thu</div>
         <div className="md:block hidden m-text-agenda">Thursday</div>
         </a>
+         )}
         </div>
         <a href="mailto:summit-2024@eurohpc-ju.europa.eu" className="m-text-agenda ">
           Contact

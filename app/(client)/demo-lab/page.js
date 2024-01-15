@@ -16,7 +16,7 @@ export default async function Home() {
 console.log(demoLabData)
   return (
     <>
-      <Header page={true} />
+      <Header page={true} demolab={true} />
       <main className="demo-lab">
         <div>
           {demoLabData.map((item, index) => (
