@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className="pt-4 px-4 pb-12 md:px-8 md:py-6 back-blue border-b-2 border-black  md:col-start-4 md:col-end-13 md:flex md:flex-col md:justify-between">
       <div className="flex justify-between">
-        <div className="hero-text yellow uppercase">To exascale <br /> and beyond</div>
+        <div className="hero-text yellow uppercase">EuroHPC <br /> Summit 2024</div>
         <div className="hero-text red uppercase text-right">
           Antwerp <br /> 18-21 march
         </div>
