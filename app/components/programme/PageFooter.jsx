@@ -4,9 +4,9 @@ function PageFooter({ menuData }) {
   return (
     <>
       <div className="border-b-2  border-black">
-        <div className="customGrid6 relative md:customGrid12 back-blue  pl-3 md:pl-0 ">
+        <div className="customGrid6 relative md:customGrid12 back-blue md:outline-2 md:outline  md:outline-black  pl-3 md:pl-0 ">
           <div className="col-start-1 col-end-2 back-blue  border-r-2 md:border-none border-black"></div>
-          <div className="col-start-2 col-end-7 md:col-start-1 md:col-end-4 md:border-r-2 md:border-t-2   border-black  back-blue informations py-6 px-4 md:py-4 text-white md:px-8">
+          <div className="col-start-2 col-end-7 md:col-start-1 md:col-end-4 md:border-r-2   border-black  back-blue informations py-6 px-4 md:py-4 text-white md:px-8">
             
             <div className="informations break-words">
             INFORMATION

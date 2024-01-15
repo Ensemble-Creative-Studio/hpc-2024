@@ -40,7 +40,7 @@ function DemoLabItem({ item, className }) {
         <Image
           priority
           className="md:h-full md:w-full"
-          src="/cube-4.svg"
+          src="/cube.svg"
           alt="me"
           height={20}
           width={20}

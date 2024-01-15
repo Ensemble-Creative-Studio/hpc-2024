@@ -1,4 +1,5 @@
 import React from "react";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 function ProgrammeItem({ item, className }) {
   return (
