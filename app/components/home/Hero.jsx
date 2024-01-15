@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="flex justify-between">
         <div className="hero-text yellow uppercase">To exascale <br /> and beyond</div>
         <div className="hero-text red uppercase text-right">
-          Antwerp <br /> summit 2024
+          Antwerp <br /> 18-21 march
         </div>
       </div>
       <div>
@@ -18,6 +18,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="font-16px text-center text-white uppercase md:pb-2">
+        to exascale and beyond <br />
       Unleashing the Power of European HPC
 and Quantum Computing
       </div>
