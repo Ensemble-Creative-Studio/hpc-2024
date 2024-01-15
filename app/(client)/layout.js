@@ -4,7 +4,7 @@ import '../globals.css'
 
 
 export const metadata = {
-  title: 'HPC - Antwerp summit 2024',
+  title: 'EuroHPC Summit 2024- Antwerp',
   description: 'Unleashing the Power of European HPC and Quantum Computing',
 }
 
