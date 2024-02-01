@@ -54,7 +54,7 @@ function EventList({ events }) {
                       className="flex md:flex-row-reverse relative customLine justify-between md:justify-end   border-b-2 border-black"
                       key={index}
                     >
-                      <div className=" md:left-[26%] md:absolute flex flex-col justify-between md:justify-start p-4 md:pt-6 md:pb-8">
+                      <div className=" md:left-[26%] w-full md:w-auto md:absolute flex flex-col justify-between md:justify-start p-4 md:pt-6 md:pb-8">
                         <div className="m-speakers">{speaker.name}</div>
                         <div>
                           <div className="m-job"> {speaker.job}</div>
@@ -108,7 +108,7 @@ function EventList({ events }) {
                                 className="flex md:flex-row-reverse relative customLine justify-between md:justify-end   border-b-2 border-black"
                                 key={index}
                               >
-                                <div className=" md:left-[26%] md:absolute flex flex-col justify-between md:justify-start p-4 md:pt-6 md:pb-8">
+                                <div className=" md:left-[26%] w-full md:w-auto md:absolute flex flex-col justify-between md:justify-start p-4 md:pt-6 md:pb-8">
                                   <div className="m-speakers">{speaker.name}</div>
                                   <div>
                                     <div className="m-job"> {speaker.job}</div>

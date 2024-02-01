@@ -169,7 +169,7 @@ footer a {
 
 /* CUSTOM IMAGE SIZE */
 .speakers-image {
-  height: 8.2rem;
+  height: auto;
   width: 8.4rem;
 }
 .speakers-image img {
