@@ -1,7 +1,26 @@
+'use client'
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
 export default function Header({page, demolab}) {
+  useEffect(() => {
+    // Code to execute when 'page' prop changes
+    const mainElement = document.querySelector("main");
+    const htmlElement = document.querySelector("html");
+    if (mainElement.classList.contains("poster")) {
+      if (window.innerWidth < 768) {
+        htmlElement.style.scrollPaddingTop = "4rem";
+      } else {
+        htmlElement.style.scrollPaddingTop = "12rem";
+      }
+    } else {
+      htmlElement.style.scrollPaddingTop = "";
+    }
+
+    // Add more code here if needed
+  }, [page]); // Dependency array with 'page' as dependency
   return (
     <header className=" z-50 customGrid6 md:customGrid12 h-16 md:h-24 border-b-2 border-black sticky top-0 bg-white px-4 md:px-0">
       <div className="m-text-agenda flex items-center border-r-2  border-black md:col-start-1 md:col-end-4 md:px-12 md:justify-between">

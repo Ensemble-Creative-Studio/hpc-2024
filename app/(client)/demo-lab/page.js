@@ -13,7 +13,6 @@ export default async function Home() {
   const menuData = await getMenu();
 
   const daysOfWeek = ['about', 'monday', 'tuesday', 'wednesday', 'thursday']; // Define the days of the week
-console.log(demoLabData)
   return (
     <>
       <Header page={true} demolab={true} />

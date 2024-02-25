@@ -12,7 +12,6 @@ export const dynamic = "force-dynamic";
 export default async function Home() {
   const infosData = await getInfos();
   const menuData = await getMenu();
-console.log(infosData)
   return (
     <>
       <Header page={false} />

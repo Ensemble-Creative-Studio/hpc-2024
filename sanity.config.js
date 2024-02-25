@@ -58,6 +58,17 @@ export default defineConfig({
                           .schemaType("informations")
                           .documentId("informations")
                       ),
+                      S.listItem()
+                      .title("Posters")
+                      .id("poster")
+                      .child(
+                        // Instead of rendering a list of documents, we render a single
+                        // document, specifying the `documentId` manually to ensure
+                        // that we're editing the single instance of the document
+                        S.document()
+                          .schemaType("poster")
+                          .documentId("poster")
+                      ),
             S.divider(),
             S.documentTypeListItem("speakers").title("Speakers"),
             S.divider(),

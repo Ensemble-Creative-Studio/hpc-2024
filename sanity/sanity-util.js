@@ -8,6 +8,17 @@ export async function getMenu() {
     }
   `);
 }
+export async function getPoster() {
+  return client.fetch(groq`
+   *[_type == 'poster'] | order(lower(name) asc) {
+      ..., // Include other properties you need
+      "posters": posters[] {
+        ..., // Include other properties you need for each poster
+        "FileUrl": File.asset->url // This part will resolve the URL if file info is available
+      }
+    }
+  `);
+}
 export async function getProgramme() {
   const programmeData = await client.fetch(groq`
     *[_type == 'programme']
