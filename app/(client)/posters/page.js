@@ -31,10 +31,10 @@ export default async function Home() {
       <Header page={false} demolab={false} />
       <main className="poster">
         <div className="block md:customGrid12">
-          <div className="sticky md:h-[60px] first-letter: z-30 md:top-24 md:col-start-1 md:col-end-4  md:border-r-2 b back-blue md:border-black">
+          <div className="sticky md:h-[60px] first-letter: z-30 md:top-24 md:col-start-1 md:col-end-4  md:border-r-2 b back-blue md:border-b md:border-black md:border-black">
             {/* Navigation bar for scrolling */}
           </div>
-          <div className="flex items-center  sticky md:h-[60px] h-[40px] pl-[9px] gap-8 overflow-auto flex-nowrap hideScroll z-30 md:pl-5 md:gap-7 md:top-24 justify-start text-white back-blue md:col-start-4 md:col-end-13">
+          <div className="flex items-center   sticky md:h-[60px] h-[40px] pl-[9px] gap-8 overflow-auto flex-nowrap hideScroll  md:border-solid z-30 md:pl-5 md:gap-7 md:top-24 top-16 justify-start text-white back-blue md:col-start-4 md:col-end-13">
             {/* Map through the posters to generate anchor IDs */}
             {posterData[0].posters.map((poster) => {
               const anchorId = generateAnchorId(poster.nameOfPoster);
@@ -58,13 +58,16 @@ export default async function Home() {
           <div className="sticky z-30 top-16 md:col-start-1 md:col-end-4  md:border-r-2 md:border-black">
             {/* Navigation bar for scrolling */}
           </div>
-          <div className="md:col-start-4 md:col-end-12 ">
+          <div className="md:col-start-4 md:col-end-12 relative ">
             {posterData[0].posters.map((poster) => {
               const anchorId = generateAnchorId(poster.nameOfPoster);
               return (
                 <div key={poster._key} id={anchorId} className=" ">
-                  <div className="customGrid6 relative md:customGrid12 text-black md:px-0 border-b-2  border-black md:min-h-48 ">
-                    <div className="pr-4 pt-4 px-4   col-start-1 col-end-2 md:col-end-4 md:pl-8 md:pt-8 md:pr-4 md:pb-4 md:flex flex-col gap-[4px] ">
+                  <div className="customGrid6 relative group hover:bg-[#E7E7E7] transition300  md:customGrid12 text-black md:px-0 border-b-2  border-black md:min-h-48 ">
+                  <div className="absolute md:block group-hover:bg-[#0929d4]  hidden h-[102%] w-[38%]  -left-[38%] -top-[0.3px] transition300 md:border-b-2 md:border-black">
+            {/* Navigation bar for scrolling */}
+          </div>
+                    <div className="pr-4 pt-4 px-4  col-start-1 col-end-2 md:col-end-4 md:pl-8 md:pt-8 md:pr-4 md:pb-4 md:flex flex-col gap-[4px] ">
                       <div className=" m-text-agenda">
                         {" "}
                         {poster.nameOfPoster}
@@ -81,7 +84,7 @@ export default async function Home() {
                         </a>
                       
                     </div>
-                    <div className="blockLinePoster absolute r w-full    border-black ">
+                    <div className="blockLinePoster absolute r w-full  group-hover:bg-[#E7E7E7] transition300    border-black ">
                       {poster.FileUrl && (
                         <a
                           href={poster.FileUrl}
@@ -94,6 +97,8 @@ export default async function Home() {
                       )}
                     </div>
                   </div>
+
+         
                 </div>
               );
             })}

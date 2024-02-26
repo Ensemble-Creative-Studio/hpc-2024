@@ -343,3 +343,6 @@ footer a {
     font-size: 2rem;
   }
 }
+.transition300{
+  transition: all 0.3s ease;
+}
