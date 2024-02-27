@@ -2,12 +2,12 @@ import Header from "../../components/home/Header";
 import InfoListDemo from "@/app/components/informations/InfoListDemo";
 
 import DemoLabItem from "@/app/components/demoLab/DemoLabItem";
-import EventListDemo from "@/app/components/demoLab/EventListDemo";
+// import EventListDemo from "@/app/components/demoLab/EventListDemo";
 import { getMenu, getInfos } from "../../../sanity/sanity-util";
 
 import PageFooter from "@/app/components/programme/PageFooter";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const infosData = await getInfos();

@@ -6,7 +6,7 @@ import { getMenu, getDemoLab } from "../../../sanity/sanity-util";
 
 import PageFooter from "@/app/components/programme/PageFooter";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const demoLabData = await getDemoLab();
