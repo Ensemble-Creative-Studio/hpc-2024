@@ -34,7 +34,7 @@ export default async function Home() {
           <div className="sticky md:h-[60px] first-letter: z-30 md:top-24 md:col-start-1 md:col-end-4  md:border-r-2 b back-blue md:border-b md:border-black md:border-black">
             {/* Navigation bar for scrolling */}
           </div>
-          <div className="flex items-center   sticky md:h-[60px] h-[40px] pl-[9px] gap-6 overflow-auto flex-nowrap hideScroll  md:border-solid z-30 md:pl-5 md:gap-7 md:top-24 top-16 justify-start text-white back-blue md:col-start-4 md:col-end-13">
+          <div className="flex items-center   sticky md:h-[60px] h-[40px] pl-[9px] pr-4 md:pr-0 gap-6 overflow-auto flex-nowrap hideScroll  md:border-solid z-30 md:pl-5 md:gap-7 md:top-24 top-16 justify-start text-white back-blue md:col-start-4 md:col-end-13">
             {/* Map through the posters to generate anchor IDs */}
             {posterData[0].posters.map((poster) => {
               const anchorId = generateAnchorId(poster.nameOfPoster);
