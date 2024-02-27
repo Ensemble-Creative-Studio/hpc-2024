@@ -34,7 +34,7 @@ export default async function Home() {
           <div className="sticky md:h-[60px] first-letter: z-30 md:top-24 md:col-start-1 md:col-end-4  md:border-r-2 b back-blue md:border-b md:border-black md:border-black">
             {/* Navigation bar for scrolling */}
           </div>
-          <div className="flex items-center   sticky md:h-[60px] h-[40px] pl-[9px] gap-8 overflow-auto flex-nowrap hideScroll  md:border-solid z-30 md:pl-5 md:gap-7 md:top-24 top-16 justify-start text-white back-blue md:col-start-4 md:col-end-13">
+          <div className="flex items-center   sticky md:h-[60px] h-[40px] pl-[9px] gap-6 overflow-auto flex-nowrap hideScroll  md:border-solid z-30 md:pl-5 md:gap-7 md:top-24 top-16 justify-start text-white back-blue md:col-start-4 md:col-end-13">
             {/* Map through the posters to generate anchor IDs */}
             {posterData[0].posters.map((poster) => {
               const anchorId = generateAnchorId(poster.nameOfPoster);
@@ -45,7 +45,7 @@ export default async function Home() {
                   <a
                     key={anchorId}
                     href={`#${anchorId}`}
-                    className=" m-mini-time"
+                    className=" m-mini-time px-2"
                   >
                     {anchorId.toUpperCase()}
                   </a>
@@ -67,8 +67,8 @@ export default async function Home() {
                   <div className="absolute md:block group-hover:bg-[#0929d4]  hidden h-[102%] w-[38%]  -left-[38%] -top-[0.3px] transition300 md:border-b-2 md:border-black">
             {/* Navigation bar for scrolling */}
           </div>
-                    <div className="pr-4 pt-4 px-4  col-start-1 col-end-2 md:col-end-4 md:pl-8 md:pt-8 md:pr-4 md:pb-4 md:flex flex-col gap-[4px] ">
-                      <div className=" m-text-agenda">
+                    <div className="pr-4 pt-4 px-4  col-start-1 col-end-5 md:col-end-7 md:pl-8 md:pt-8 md:pr-4 md:pb-4  md:flex flex-col gap-[4px] ">
+                      <div className=" m-text-agenda pb-1 md:pb-0">
                         {" "}
                         {poster.nameOfPoster}
                       </div>
@@ -77,7 +77,7 @@ export default async function Home() {
                         <a
                           href={poster.FileUrl}
                           download
-                          className="flex md:hidden gap-[10px] pt-[2.5rem] pb-6  top-0 left-0  relative md:justify-end md:pr-5 "
+                          className="flex md:hidden gap-[10px] pt-[2.5rem] pb-4  top-0 left-0  relative md:justify-end md:pr-5 "
                         >
                           <div className="uppercase m-mini-time">Download</div>
                           <div className="m-mini-time">↓</div>

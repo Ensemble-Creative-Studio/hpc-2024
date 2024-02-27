@@ -11,7 +11,7 @@ export default function Header({page, demolab}) {
     const htmlElement = document.querySelector("html");
     if (mainElement.classList.contains("poster")) {
       if (window.innerWidth < 768) {
-        htmlElement.style.scrollPaddingTop = "4rem";
+        htmlElement.style.scrollPaddingTop = "8rem";
       } else {
         htmlElement.style.scrollPaddingTop = "12rem";
       }
