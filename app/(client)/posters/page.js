@@ -68,7 +68,7 @@ export default async function Home() {
             {/* Navigation bar for scrolling */}
           </div>
                     <div className="pr-4 pt-4 px-4  col-start-1 col-end-5 md:col-end-7 md:pl-8 md:pt-8 md:pr-4 md:pb-4  md:flex flex-col gap-[4px] ">
-                      <div className=" m-text-agenda pb-1 md:pb-0">
+                      <div className=" m-text-agenda pb-3 md:pb-0">
                         {" "}
                         {poster.nameOfPoster}
                       </div>
