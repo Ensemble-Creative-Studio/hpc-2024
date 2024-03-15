@@ -141,7 +141,7 @@ export default async function Home() {
 
                      
                           <iframe className="aspect-video md:w-[97%]" src="https://www.videliostreaming.com/Paris1/HPC/2024-03-19_2/index_iframe.php?
-            video=1" width="100%" height='100%' scrolling="no" allowfullscreen="" frameborder="0"></iframe>
+            video=1" width="100%" height='100%' ></iframe>
                           <script type="text/javascript"
                             src="https://www.videliostreaming.com/communs/javascript/iframeResizer.min.js"></script>
             
