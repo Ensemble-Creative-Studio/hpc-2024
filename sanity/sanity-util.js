@@ -27,6 +27,8 @@ export async function getProgramme() {
       ...,
       events[]{
         ...,
+        "FileUrl": File.asset->url, // This part will resolve the URL if file info is available
+
         speakers[]->{
           // Specify the fields you want to retrieve from the referenced speaker documents
           // For example:
@@ -45,6 +47,18 @@ export async function getProgramme() {
 export async function getDemoLab() {
   const demoLabData = await client.fetch(groq`
     *[_type == 'demolab']
+    | order(_createdAt asc)
+    {
+      ...,
+
+    }
+  `);
+
+  return demoLabData;
+}
+export async function getLiveStream() {
+  const demoLabData = await client.fetch(groq`
+    *[_type == 'liveStream']
     | order(_createdAt asc)
     {
       ...,

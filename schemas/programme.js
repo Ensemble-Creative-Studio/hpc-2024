@@ -99,7 +99,11 @@ export default {
               title: 'Hour Finish',
               type: 'string',
             },
-      
+            {
+              name: 'File',
+              title: 'Presentation File',
+              type: 'file',
+            },
             {
               name: 'speakers',
               title: 'Speakers',
@@ -134,7 +138,11 @@ export default {
               type: 'string',
             },
        
-     
+            {
+              name: 'File',
+              title: 'Presentation File',
+              type: 'file',
+            },
             {
               name: 'speakers',
               title: 'Speakers',

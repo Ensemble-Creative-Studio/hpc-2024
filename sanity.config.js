@@ -39,6 +39,17 @@ export default defineConfig({
                 .defaultOrdering([{ field: 'date', direction: 'desc' }]) // Order by creation date in ascending order
                 .filter('_type == "programme"') // Replace "programme" with your actual schema type name
             ),
+            S.listItem()
+            .title("Live Stream")
+            .id("liveStream")
+            .child(
+              // Instead of rendering a list of documents, we render a single
+              // document, specifying the `documentId` manually to ensure
+              // that we're editing the single instance of the document
+              S.document()
+                .schemaType("liveStream")
+                .documentId("liveStream")
+            ),
                       S.documentTypeListItem("demolab").title("Demo LAB").child(
                         S.documentList()
                           .id("demolab")
@@ -47,6 +58,7 @@ export default defineConfig({
                           .filter('_type == "demolab"') // Replace "programme" with your actual schema type name
                       ),
            
+                  
                       S.listItem()
                       .title("Practical Informations")
                       .id("informations")

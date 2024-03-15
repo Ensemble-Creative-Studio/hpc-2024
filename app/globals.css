@@ -194,7 +194,7 @@ footer a {
 }
 
 /* //custom */
-.demo-lab .block:nth-child(1) .prog-u {
+.demo-lab .block:nth-child(1) .prog-u,.livestream .block:nth-child(2) .prog-u  {
   display: block;
   font-size: 1.3rem;
 }
@@ -213,7 +213,7 @@ footer a {
 .pratical .infoTitle {
   white-space: nowrap;
 }
-.pratical .linkedA p {
+.pratical .linkedA p, .portableLive p {
   text-transform: none;
   line-height: 130%;
 }
@@ -327,7 +327,7 @@ footer a {
   html {
     scroll-padding-top: 6rem;
   }
-  .demo-lab .block:nth-child(1) .prog-u {
+  .demo-lab .block:nth-child(1) .prog-u, .livestream .block:nth-child(2) .prog-u {
     font-size: 2rem;
     font-style: normal;
     font-weight: 300;

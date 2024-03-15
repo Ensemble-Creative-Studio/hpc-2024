@@ -21,7 +21,7 @@ function EventList({ events }) {
                   </div>
                 )}
               </div>
-              <div className="col-start-2 md:col-start-4 col-end-6 md:col-end-12  pl-4 gap-4 pt-6 md:pt-6 pb-6 flex items-start">
+              <div className="col-start-2 md:col-start-4 col-end-6 md:col-end-9  pl-4 gap-2 pt-6  md:pt-6 pb-6 flex items-start">
                 <div className=" m-text-agenda"> {event.nameOfEvent}</div>
               </div>
               <div className="blockLine absolute r w-full back-grey   border-black "></div>
@@ -41,11 +41,21 @@ function EventList({ events }) {
                   </div>
                 )}
               </div>
-              <div className="col-start-2 md:col-start-4 col-end-6 md:col-end-12  pl-4 gap-4 pt-6  md:pt-6 pb-6 flex items-start">
+              <div className="col-start-2 md:col-start-4 col-end-6 md:col-end-9  pl-4 gap-2 pt-6  md:pt-6 pb-6 flex items-start">
                   <div className=" m-text-agenda"> {event.nameOfEvent}</div>
                 </div>
+                {event.FileUrl && (
+                <a
+                          href={event.FileUrl}
+                          download
+                          className="flex text-black gap-[4px]  md:col-start-9 justify-start  col-start-2 pl-[0.9rem] col-end-6 md:col-end-13  md:pt-[1.8rem] pb-4  top-0 left-0  relative md:justify-end md:pr-20  "
+                        >
+                          <div className="uppercase m-mini-time">Download Presentations</div>
+                          <div className="m-mini-time">↓</div>
+                        </a>
+                                 )}
                 <div className="blockLine absolute r w-full    border-black "></div>
-
+       
               </div>
               {event.speakers && event.speakers.length > 0 && (
                 <div className="">
@@ -92,11 +102,21 @@ function EventList({ events }) {
                             </div>
                           )}
                         </div>
-                        <div className="col-start-2 md:col-start-4 col-end-6 md:col-end-12  pl-4 gap-4 pt-6  md:pt-6 pb-6 flex flex-col items-start">
+                        <div className="col-start-2 md:col-start-4 col-end-6 md:col-end-9  pl-4 gap-2 pt-6  md:pt-6 pb-6 flex flex-col items-start">
                         <div className=" m-text-agenda"> {event.nameOfEvent}</div>
                   <div className=" m-job lightBlue pb-2"> {event.subNameOfEvent}</div>
-                  
+                 
                 </div>
+                {event.FileUrl && (
+                <a
+                          href={event.FileUrl}
+                          download
+                          className="flex text-black gap-[4px]  md:col-start-9 justify-start  col-start-2 pl-[0.9rem] col-end-6 md:col-end-13  md:pt-[1.8rem] pb-6  top-0 left-0  relative md:justify-end md:pr-20  "
+                        >
+                          <div className="uppercase m-mini-time">Download Presentations</div>
+                          <div className="m-mini-time">↓</div>
+                        </a>
+                                 )}
                 <div className="blockLine absolute  w-full    border-black "></div>
 
                 <div className="blueLine absolute bottom-0 left-0 h-2 w-full md:w-[97%] back-blue"></div>
