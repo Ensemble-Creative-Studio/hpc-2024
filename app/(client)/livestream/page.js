@@ -46,7 +46,7 @@ export default async function Home() {
   return (
     <>
       <Header page={false} demolab={false} />
-      <main className="demo-lab livestream flex flex-col md:block justify-between   ">
+      <main className="demo-lab livestream flex flex-col md:flex justify-between h-screen  ">
         <div>
 
           <div
@@ -93,7 +93,7 @@ export default async function Home() {
             {/* <EventListDemo events={item.events} /> */}
           </div>
           <div
-            className="block md:customGrid12 "
+            className="block md:customGrid12 border-b-2 border-black "
 
           >
             {/* Render other properties using ProgrammeItem component */}
