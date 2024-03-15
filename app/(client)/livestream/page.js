@@ -31,34 +31,11 @@ export default async function Home() {
   };
 
 
-  const ImageComponent = ({ value }) => {
-    if (!value?.asset) {
-      return null;
-    }
 
-    // Extract the image ID from the asset reference
-    const imageId = value.asset._ref; // Adjust according to your asset reference format
-
-    return (
-      <div className="w-full pb-8">
-        <Image
-          priority
-          className="md:h-full md:w-full"
-          src={urlForImage({ _id: imageId })}
-          alt="Event Image"
-          height={1800}
-          width={1800}
-        />
-      </div>
-
-    );
-  };
 
   // Define the components to override
   const components = {
-    types: {
-      image: ImageComponent, // Define the renderer for 'image' type
-    },
+
     marks: {
       link: linkRenderer,
     },
@@ -142,8 +119,7 @@ export default async function Home() {
                      
                           <iframe className="aspect-video md:w-[97%]" src="https://www.videliostreaming.com/Paris1/HPC/2024-03-19_2/index_iframe.php?
             video=1" width="100%" height='100%' ></iframe>
-                          <script type="text/javascript"
-                            src="https://www.videliostreaming.com/communs/javascript/iframeResizer.min.js"></script>
+                       
             
                           
                         </div>
