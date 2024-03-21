@@ -30,6 +30,55 @@ export default {
       title: 'Live stream title',
       type: 'string',
     },
+    {
+      name: 'events',
+      title: 'Events',
+      type: 'array',
+      of: [
+  
+        {
+          type: 'object',
+          name: 'meetingEvent',
+          title: 'Event',
+          fields: [
+            {
+              name: 'day',
+              title: 'Day of event',
+              type: 'string',
+            },
+         
+            {
+              name: 'event',
+              title: 'Event',
+              type: 'array',
+              of: [
+          
+                {
+                  type: 'object',
+                  name: 'item',
+                  title: 'Item',
+                  fields: [
+                    {
+                      name: 'name',
+                      title: 'Name of event',
+                      type: 'string',
+                    },
+                 
+                    {
+                      name: 'url',
+                      title: 'Video Url',
+                      type: 'string',
+                    },
+                  ],
+                },
+             
+              ],
+            },
+          ],
+        },
+     
+      ],
+    },
   ],
 
   preview: {

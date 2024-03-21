@@ -1,19 +1,20 @@
 import Header from "../../components/home/Header";
-import ProgrammeItem from "@/app/components/programme/ProgrammeItem";
+import ProgrammeItemLiveStream from "@/app/components/programme/ProgrammeItemLivestream";
 import DemoLabItem from "@/app/components/demoLab/DemoLabItem";
-import EventListDemo from "@/app/components/demoLab/EventListDemo";
+
+import EventListLiveStream from "@/app/components/programme/EventListLiveStream";
 import { getMenu, getDemoLab, getLiveStream } from "../../../sanity/sanity-util";
 import { PortableText } from "@portabletext/react";
 
 import PageFooter from "@/app/components/programme/PageFooter";
 
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const demoLabData = await getDemoLab();
   const liveStreamdata = await getLiveStream();
   const menuData = await getMenu();
-  console.log(liveStreamdata)
+  console.log(liveStreamdata[0].events)
   const daysOfWeek = ['about', 'monday', 'tuesday', 'wednesday', 'thursday']; // Define the days of the week
   const linkRenderer = ({ children, value }) => (
     <a href={value.href} target="_blank" rel="noopener noreferrer" className="m-text-agenda">
@@ -46,7 +47,7 @@ export default async function Home() {
   return (
     <>
       <Header page={false} demolab={false} />
-      <main className="demo-lab livestream flex flex-col md:flex justify-between h-screen  ">
+      <main className="demo-lab livestream flex flex-col md:flex justify-between  ">
         <div>
 
           <div
@@ -114,19 +115,37 @@ export default async function Home() {
               </div>
 
             </div>
-                        <div className=" md:col-start-4 md:col-end-12 ">
+            <div className=" md:col-start-4 md:col-end-12 ">
 
-                     
-                          <iframe className="aspect-video md:w-[97%]" src="https://www.videliostreaming.com/Paris1/HPC/2024-03-19_2/index_iframe.php?
+
+              <iframe className="aspect-video md:w-[97%]" src="https://www.videliostreaming.com/Paris1/HPC/2024-03-19_2/index_iframe.php?
             video=1" width="100%" height='100%' ></iframe>
-                       
-            
-                          
-                        </div>
+
+
+
+            </div>
+          </div>
+          <div>
+            {liveStreamdata[0].events.map((item, index) => (
+              <div
+                className="block md:customGrid12"
+                key={index} // Add a unique key prop, assuming `_id` is unique
+              >
+                {/* Render other properties using ProgrammeItem component */}
+                <ProgrammeItemLiveStream
+                  item={item}
+                  className="back-red md:sticky md:top-24 md:h-48 md:border-b-2 md:border-black"
+                // Pass your desired class name here
+                />
+
+                {/* Render events using EventList component */}
+                <EventListLiveStream events={item.event} />
+              </div>
+            ))}
           </div>
         </div>
         <div>
-        <PageFooter menuData={menuData} />
+          <PageFooter menuData={menuData} />
         </div>
 
       </main>
