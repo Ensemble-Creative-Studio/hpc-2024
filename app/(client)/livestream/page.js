@@ -8,13 +8,13 @@ import { PortableText } from "@portabletext/react";
 
 import PageFooter from "@/app/components/programme/PageFooter";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const demoLabData = await getDemoLab();
   const liveStreamdata = await getLiveStream();
   const menuData = await getMenu();
-  console.log(liveStreamdata[0].events)
+  // console.log(liveStreamdata[0].events)
   const daysOfWeek = ['about', 'monday', 'tuesday', 'wednesday', 'thursday']; // Define the days of the week
   const linkRenderer = ({ children, value }) => (
     <a href={value.href} target="_blank" rel="noopener noreferrer" className="m-text-agenda">

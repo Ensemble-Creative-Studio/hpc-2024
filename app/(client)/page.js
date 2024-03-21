@@ -4,7 +4,7 @@ import Hero from "../components/home/Hero";
 import Menu from "../components/home/Menu";
 import Footer from "../components/home/Footer";
 import { getMenu } from "../../sanity/sanity-util";
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 export default async function Home() {
   const menuData = await getMenu();
   return (
